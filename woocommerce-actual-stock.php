@@ -15,7 +15,7 @@
  * @wordpress-plugin
  * Plugin Name:       Actuele voorraadstatus
  * Plugin URI:        https://www.thuisleefgids.nl
- * Description:       Plugin om API's van
+ * Description:       Plugin om voorraadAPI van leveranciers aan te roepen en voorraad updaten in WooCommerce
  * Version:           1.0.0
  * Author:            Patrick Hopman
  * Author URI:        https://www.patrickhopman.nl
