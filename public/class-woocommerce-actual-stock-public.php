@@ -52,6 +52,20 @@ class Woocommerce_Actual_Stock_Public {
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
 
+		add_action('acf/save_post', array($this, 'create_cronjobs_actual_stock'), 20);
+
+	}
+
+	/**
+	 * Create cronjobs for leveranciers when the options page is saved.
+	 *
+	 * @since    1.0.0
+	 */
+	public function create_cronjobs_actual_stock() {
+		$screen = get_current_screen();
+		if (strpos($screen->id, "options_page_id") == true) {
+			//Create cronjobs
+		}
 	}
 
 	/**
