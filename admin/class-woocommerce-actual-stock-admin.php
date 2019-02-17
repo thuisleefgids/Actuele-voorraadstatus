@@ -52,6 +52,188 @@ class Woocommerce_Actual_Stock_Admin {
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
 
+		if( function_exists('acf_add_options_page') ) {
+
+			acf_add_options_page(array(
+				'page_title' 	=> 'Theme General Settings',
+				'menu_title'	=> 'Theme Settings',
+				'menu_slug' 	=> 'theme-general-settings',
+				'capability'	=> 'edit_posts',
+				'redirect'		=> false
+			));
+
+			acf_add_options_sub_page(array(
+				'page_title' 	=> 'Theme Header Settings',
+				'menu_title'	=> 'Header',
+				'parent_slug'	=> 'theme-general-settings',
+			));
+
+			acf_add_options_sub_page(array(
+				'page_title' 	=> 'Theme Footer Settings',
+				'menu_title'	=> 'Footer',
+				'parent_slug'	=> 'theme-general-settings',
+			));
+
+		}
+		if( function_exists('acf_add_local_field_group') ):
+
+			acf_add_local_field_group(array(
+			'key' => 'group_5c667dbd176f4',
+			'title' => 'Actuele voorraadstatus',
+			'fields' => array(
+			array(
+			'key' => 'field_5c667dbe29d45',
+			'label' => 'Leverancier',
+			'name' => 'leverancier',
+			'type' => 'repeater',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+			'width' => '',
+			'class' => '',
+			'id' => '',
+			),
+			'collapsed' => 'field_5c667ee70a9d7',
+			'min' => 0,
+			'max' => 0,
+			'layout' => 'row',
+			'button_label' => 'Nieuwe leverancier',
+			'sub_fields' => array(
+			array(
+			'key' => 'field_5c667ee70a9d7',
+			'label' => 'Naam',
+			'name' => 'naam',
+			'type' => 'text',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+			'width' => '',
+			'class' => '',
+			'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+			'maxlength' => '',
+			),
+			array(
+			'key' => 'field_5c667ef00a9d8',
+			'label' => 'URL',
+			'name' => 'url',
+			'type' => 'url',
+			'instructions' => '',
+			'required' => 1,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+			'width' => '',
+			'class' => '',
+			'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+			),
+			array(
+			'key' => 'field_5c667efd0a9d9',
+			'label' => 'API key',
+			'name' => 'api_key',
+			'type' => 'text',
+			'instructions' => '',
+			'required' => 1,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+			'width' => '',
+			'class' => '',
+			'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+			'maxlength' => '',
+			),
+			array(
+			'key' => 'field_5c667f160a9da',
+			'label' => 'API secret',
+			'name' => 'api_secret',
+			'type' => 'password',
+			'instructions' => '',
+			'required' => 1,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+			'width' => '',
+			'class' => '',
+			'id' => '',
+			),
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+			),
+			array(
+			'key' => 'field_5c667f4b0a9dc',
+			'label' => 'Frequentie (minuten)',
+			'name' => 'frequentie_minuten',
+			'type' => 'number',
+			'instructions' => '',
+			'required' => 1,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+			'width' => '',
+			'class' => '',
+			'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+			'min' => 1,
+			'max' => 60,
+			'step' => '',
+			),
+			array(
+			'key' => 'field_5c667f210a9db',
+			'label' => 'SKU Prefix',
+			'name' => 'sku_prefix',
+			'type' => 'text',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+			'width' => '',
+			'class' => '',
+			'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+			'maxlength' => '',
+			),
+			),
+			),
+			),
+			'location' => array(
+			array(
+			array(
+			'param' => 'page',
+			'operator' => '==',
+			'value' => '5272',
+			),
+			),
+			),
+			'menu_order' => 0,
+			'position' => 'normal',
+			'style' => 'seamless',
+			'label_placement' => 'top',
+			'instruction_placement' => 'label',
+			'hide_on_screen' => '',
+			'active' => 1,
+			'description' => '',
+			));
+
+		endif;
 	}
 
 	/**
